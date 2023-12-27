@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Our Articles @if(isset($title)) {{ ' | '.$title}} @endif</title>
+        <title>My Stories @if(isset($title)) {{ ' | '.$title}} @endif</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -14,13 +14,15 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="antialiased min-h-screen lg:flex" x-data="{open: false}">
+    <body class="antialiased min-h-screen lg:flex bg-d9c1de" x-data="{open: false}">
         <nav
-            class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-10 w-80 bg-indigo-900 text-white h-screen p-3"
+            class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-9 w-66 bg-indigo-900 text-white h-screen p-0"
             :class="{'translate-x-0 ease-in opacity-100':open === true, '-translate-x-full ease-out opacity-0': open === false}"
         >
             <div class="flex justify-between">
-                <span class="font-bold text-2xl sm:text-3xl p-2">Sidebar</span>
+                <!-- <span class="font-bold text-2xl sm:text-3xl p-2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFTHHSYUGcsIFpkPbLKYhnNvn8l6wSii_28g&usqp=CAU">
+                </span> -->
                 <button
                     class="p-2 focus:outline-none focus:bg-indigo-800 hover:bg-indigo-800 rounded-md lg:hidden"
                     @click="open = false"
@@ -41,18 +43,26 @@
                     </svg>
                 </button>
             </div>
-            <ul class="mt-8">
+            <!-- <ul class="mt-8">
                 <li>
                     <a
-                        href="{{ route('welcome') }}"
+                        href="{{ route('home') }}"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >Main Site</a
+                        >Home</a
                     >
                     <a
                         href="{{ route('admin') }}"
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >Admin Home</a
+                        >Admin</a
                     >
+        
+                    <a
+                        href="{{ route('welcome') }}"
+                        class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
+                        >All Stories</a
+                    >
+            
+
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a :href="route('logout')"
@@ -61,7 +71,7 @@
                                     {{ __('Log Out') }}</a>
                     </form>
                 </li>
-            </ul>
+            </ul> -->
         </nav>
         <div class="relative z-0 lg:flex-grow">
             <header class="flex bg-gray-700 text-white items-center px-3">

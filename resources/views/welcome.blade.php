@@ -1,6 +1,6 @@
 <x-guest-layout>
     <x-slot name="header">
-        {{ __('Our Articles') }}
+        {{ __('Explore the stories here !') }}
     </x-slot>
     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
         @auth
@@ -13,24 +13,79 @@
             @endif
         @endauth
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-3 gap-6 flex justify-center">
+        <br>
         <div class="bg-white p-6 rounded-lg shadow-md">
-            <img src="https://placekitten.com/800/600" alt="Article Image" class="mb-4 rounded-lg">
-            <h2 class="text-xl font-bold mb-2">Article 1</h2>
-            <p class="text-gray-700 mb-4">Sample content</p>
-            <a href="#" class="text-blue-500 hover:underline">Read more</a>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 1</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="https://blog.reedsy.com/short-story/3vna6q/" class="text-blue-500 hover:underline">Click Here</a>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-            <img src="https://placekitten.com/800/600" alt="Article Image" class="mb-4 rounded-lg">
-            <h2 class="text-xl font-bold mb-2">Article 2</h2>
-            <p class="text-gray-700 mb-4">Sample content</p>
-            <a href="#" class="text-blue-500 hover:underline">Read more</a>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 2</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="https://blog.reedsy.com/short-story/ayy89g/" class="text-blue-500 hover:underline">Click Here</a>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-            <img src="https://placekitten.com/800/600" alt="Article Image" class="mb-4 rounded-lg">
-            <h2 class="text-xl font-bold mb-2">Article 2</h2>
-            <p class="text-gray-700 mb-4">Sample content</p>
-            <a href="#" class="text-blue-500 hover:underline">Read more</a>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 3</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="https://blog.reedsy.com/short-story/9b3dky/" class="text-blue-500 hover:underline">Click Here</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 4</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="#" class="text-blue-500 hover:underline">Click Here</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 5</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="#" class="text-blue-500 hover:underline">Click Here</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 6</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="#" class="text-blue-500 hover:underline">Click Here</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 7</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="#" class="text-blue-500 hover:underline">Click Here</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 8</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="#" class="text-blue-500 hover:underline">Click Here</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 9</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="#" class="text-blue-500 hover:underline">Click Here</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 10</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="#" class="text-blue-500 hover:underline">Click Here</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 11</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="#" class="text-blue-500 hover:underline">Click Here</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR98snlJmlTEFVRTvoP_YDFwjZV6LnwQ9hA&usqp=CAU" alt="Article Image" class="mb-3 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Story 12</h2>
+            <!-- <p class="text-gray-700 mb-4">Sample content</p> -->
+            <a href="#" class="text-blue-500 hover:underline">Click Here</a>
         </div>
     </div>
 </x-guest-layout>

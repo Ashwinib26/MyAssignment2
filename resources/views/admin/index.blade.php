@@ -6,5 +6,5 @@
         {{ __('Admin Section')}}
     </x-slot>
 
-    This is the content of my admin section.
+    You are Admin Here.
 </x-admin-layout>
