@@ -16,7 +16,7 @@
     </head>
     <body class="antialiased min-h-screen lg:flex bg-d9c1de" x-data="{open: false}">
         <nav
-            class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-9 w-66 bg-indigo-900 text-white h-screen p-0"
+            class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-9 w-166 bg-indigo-900 text-white h-screen p-0"
             :class="{'translate-x-0 ease-in opacity-100':open === true, '-translate-x-full ease-out opacity-0': open === false}"
         >
             <div class="flex justify-between">
@@ -43,7 +43,7 @@
                     </svg>
                 </button>
             </div>
-            <!-- <ul class="mt-8">
+            <ul class="mt-8">
                 <li>
                     <a
                         href="{{ route('home') }}"
@@ -71,10 +71,10 @@
                                     {{ __('Log Out') }}</a>
                     </form>
                 </li>
-            </ul> -->
+            </ul>
         </nav>
         <div class="relative z-0 lg:flex-grow">
-            <header class="flex bg-gray-700 text-white items-center px-3">
+            <header class="flex bg-gray-500 text-white items-center justify-center px-3">
                 <button
                     class="p-2 focus:outline-none focus:bg-gray-600 hover:bg-gray-600 rounded-md lg:hidden"
                     @click="open = true"

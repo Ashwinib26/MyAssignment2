@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,7 @@
             padding: 10px;
             color: #000;
         }
+
         .titlename {
             margin-left: 500px;
             margin-top: 60px;
@@ -38,6 +40,14 @@
             color: #000;
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: xx-large;
+        }
+        .titlenames {
+            margin-left: 370px;
+            /* margin-left : 100px;
+            padding: 150px; */
+            color: #000;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: x-large;
         }
         .titlebar {
             position: fixed;
@@ -145,21 +155,8 @@
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
                         >Admin</a
                     >
+
         
-                    <a
-                        href="{{ route('welcome') }}"
-                        class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >All Stories</a
-                    >
-
-                    <a 
-                        href="{{ route('add.story') }}" 
-                        class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >Add a Story</a
-                    >
-
-
-
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a :href="route('logout')"
@@ -182,8 +179,67 @@
                 <?php endif; ?>
             <?php endif; ?>
         </div>
-        <div class="titlename"> <b> It's a StoryBreeze !</b> </div>
+        <div class="titlename">
+            <b>All Users</b>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div class="titlenames"> 
+        <?php
+            // Connect to the database
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "mystory";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Function to fetch users from the database
+            function getUsers($conn)
+            {
+                $sql = "SELECT id, name, email FROM users";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    echo "<table border='1'>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>";
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                                <td>" . $row["id"] . "</td>
+                                <td>" . $row["name"] . "</td>
+                                <td>" . $row["email"] . "</td>
+                                <td>
+                                    <a href='edit.php?id=" . $row["id"] . "'>Edit</a> |
+                                    <a href='delete.php?id=" . $row["id"] . "'>Delete</a>
+                                </td>
+                            </tr>";
+                    }
+                    echo "</table>";
+                } else 
+                {
+                    echo "0 results";
+                }
+            }
+
+            // Display users
+            getUsers($conn);
+
+            $conn->close();
+        ?>
+
+        <br>
+        <a href="add.php">Add New User</a>
+
     </div>
-    <!-- Enter Something : <input type="text"> -->
 </body>
 </html>
+
+

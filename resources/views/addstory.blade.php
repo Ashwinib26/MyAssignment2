@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,7 @@
             padding: 10px;
             color: #000;
         }
+
         .titlename {
             margin-left: 500px;
             margin-top: 60px;
@@ -38,6 +40,14 @@
             color: #000;
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: xx-large;
+        }
+        .titlenames {
+            margin-left: 370px;
+            /* margin-left : 100px;
+            padding: 150px; */
+            color: #000;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: x-large;
         }
         .titlebar {
             position: fixed;
@@ -59,56 +69,6 @@
             color: #000;
             font-size: large;
         }
-        /* ul {
-            margin-top: 8px;
-            background-color: #d9c1de;
-            font-size: large;
-        }
-
-        ul li a {
-            display: block;
-            padding: 8px 16px;
-            border-radius: 4px;
-            margin-bottom: 8px;
-            text-decoration: none;
-            color: #000;
-            font-size: large;
-        }
-
-        ul li a:hover {
-            background-color: #indigo-800;
-            font-size: large;
-        }
-
-        ul li form {
-            margin: 0;
-            padding: 0;
-            font-size: large;
-        }
-
-        ul li form a {
-            display: block;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            color: #000;
-            font-size: large;
-        }
-
-        ul li form a:hover {
-            background-color: #indigo-800;
-            font-size: large;
-        }
-
-        a.hover-bg-indigo-800:hover,
-        .rounded-md {
-            border-radius: 0.375rem; 
-        }
-
-        
-        a.hover-bg-indigo-800:hover {
-            background-color: #4f46e5; 
-        } */
         a:hover {
             background-color: #fff; 
             color: #fff; 
@@ -117,7 +77,48 @@
             background-color: #fff;
             color: #808080; 
         }
-
+        .enter1
+        {
+            margin: 10px;
+            padding: 10px;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: oblique;
+            font-weight: bold;
+        }
+        .enter2
+        {
+            margin: 10px;
+            padding: 10px;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: oblique;
+            font-weight: bold;
+        }
+        .enter3
+        {
+            margin: 10px;
+            padding: 10px;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: oblique;
+            font-weight: bold;
+        }
+        .enter4
+        {
+            margin: 10px;
+            padding: 10px;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: oblique;
+            font-weight: bold;
+        }
+        .box
+        {
+            margin: 20px;
+            padding: 20px;
+            margin-left: 270px;
+        }
     </style>
 </head>
 <body>
@@ -145,21 +146,8 @@
                         class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
                         >Admin</a
                     >
+
         
-                    <a
-                        href="{{ route('welcome') }}"
-                        class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >All Stories</a
-                    >
-
-                    <a 
-                        href="{{ route('add.story') }}" 
-                        class="block px-4 py-2 hover:bg-indigo-800 rounded-md"
-                        >Add a Story</a
-                    >
-
-
-
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a :href="route('logout')"
@@ -182,8 +170,27 @@
                 <?php endif; ?>
             <?php endif; ?>
         </div>
-        <div class="titlename"> <b> It's a StoryBreeze !</b> </div>
-    </div>
-    <!-- Enter Something : <input type="text"> -->
+        <div class="titlename">
+            <b>All Users</b>
+        </div>
+        <br><br><br>
+        <div class="box">
+            <div class="enter1">
+                Enter Category of Story : <input type="text">
+            </div>
+            <div class="enter2">
+                Enter Title of Story : <input type="text">
+            </div>
+            <div class="enter3">
+                <input type="text" placeholder="write your story here" style="width: 900px; font-size: 16px; padding: 5px; height: 300px;">
+            </div>
+            <div class="enter4">
+                Enter Moral of the Story : <input type="text">
+                <br> <br>
+                <input type="submit" name="Upload"> 
+            </div>
+        </div>
 </body>
 </html>
+
+

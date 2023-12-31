@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +36,11 @@ require __DIR__.'/auth.php';
 Route::get('/admin', [
     AdminController::class, 'index'
 ])->name('admin');
+
+Route::get('/allusers', [
+    UserController::class, 'users'
+])->name('all.user');
+
+Route::get('/addstory', [
+    StoryController::class, 'newstory'
+])->name('add.story');
