@@ -5,6 +5,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StoryController;
+use App\Http\Controllers\addcontroller;
+use App\Http\Controllers\editcontroller;
+use App\Http\Controllers\deletecontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +47,27 @@ Route::get('/allusers', [
 Route::get('/addstory', [
     StoryController::class, 'newstory'
 ])->name('add.story');
+
+Route::post('/add', [
+    addcontroller::class, 'adduser'
+])->name('add.user');
+
+Route::post('/edit', [
+    editcontroller::class, 'edituser'
+])->name('edit.user');
+
+Route::post('/delete', [
+    deletecontroller::class, 'deleteuser'
+])->name('delete.user');
+
+Route::get('/add', [
+    addcontroller::class, 'adduser'
+])->name('add.user');
+
+Route::get('/edit', [
+    editcontroller::class, 'edituser'
+])->name('edit.user');
+
+Route::get('/delete', [
+    deletecontroller::class, 'deleteuser'
+])->name('delete.user');

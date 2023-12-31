@@ -1,10 +1,24 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mystory";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Stories</title>
+    <title>Add User</title>
     <style>
         body {
             background-color: #eee9e9;
@@ -131,7 +145,7 @@
     </style>
 </head>
 <body>
-    <div class="naev">
+<div class="naev">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFTHHSYUGcsIFpkPbLKYhnNvn8l6wSii_28g&usqp=CAU">
         
         <ul class="mt-8">
@@ -171,66 +185,43 @@
                 <?php endif; ?>
             <?php endif; ?>
         </div>
-        <div class="titlename">
-            <b>All Users</b>
+
+<div class="titlename">
+            <b>Edit User</b>
         </div>
         <br><br><br><br><br><br><br>
-        <div class="titlenames"> 
+        <div class="titlenames">
         <?php
-            // Connect to the database
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "mystory";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Process the form data and insert into the database
+    $name = $_POST["name"];
+    $email = $_POST["email"];
 
-            $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
 
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
+    if ($conn->query($sql) === TRUE) {
+        echo "New user added successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+?>
 
-            // Function to fetch users from the database
-            function getUsers($conn)
-            {
-                $sql = "SELECT id, name, email FROM users";
-                $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    echo "<table border='1'>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Action</th>
-                            </tr>";
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                                <td>" . $row["id"] . "</td>
-                                <td>" . $row["name"] . "</td>
-                                <td>" . $row["email"] . "</td>
-                                <td>
-                                <a href='" . route('edit.user') . "' class='block px-4 py-2 hover:bg-indigo-800 rounded-md'>Edit</a>
-                                <a href='" . route('delete.user') . "' class='block px-4 py-2 hover:bg-indigo-800 rounded-md'>Delete</a>
-                                </td>
-                            </tr>";
-                    }
-                    echo "</table>";
-                } else 
-                {
-                    echo "0 results";
-                }
-            }
+<form method="post">
+    Name: <input type="text" name="name" required><br>
+    Email: <input type="email" name="email" required><br>
+    Password: <input type="text" name="password" required><br>
+    <input type="submit" value="Edit Details">
+</form>
 
-            // Display users
-            getUsers($conn);
+<br>
+<a href="index.blade.php">Back to User List</a>
 
-            $conn->close();
-        ?>
+        </div>
 
-        <br>
-        <a href=" {{ route('add.user') }}" class='block px-4 py-2 hover:bg-indigo-800 rounded-md'>Add New User</a>
-    </div>
+
+
+
 </body>
 </html>
-
-

@@ -171,7 +171,7 @@
             <?php endif; ?>
         </div>
         <div class="titlename">
-            <b>All Users</b>
+            <b> Add your Tale Here... </b>
         </div>
         <br><br><br>
         <div class="box">

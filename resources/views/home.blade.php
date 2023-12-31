@@ -117,7 +117,12 @@
             background-color: #fff;
             color: #808080; 
         }
-
+        .box
+        {
+            margin: 100px;
+            /* padding: 120px; */
+            margin-left:300px;
+        }
     </style>
 </head>
 <body>
@@ -184,6 +189,8 @@
         </div>
         <div class="titlename"> <b> It's a StoryBreeze !</b> </div>
     </div>
-    <!-- Enter Something : <input type="text"> -->
+    <div class="box">
+        <h1> <i>Welcome to the World of Stories. </i></h1>
+    </div>
 </body>
 </html>
